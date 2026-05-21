@@ -5,6 +5,24 @@ const GITHUB_USERNAME = 'Muhammad-Naveed342';
 const EMAIL_ADDRESS = 'mohamad.navied.mostafa.669@gmail.com';
 const MAILTO_LINK = `mailto:${EMAIL_ADDRESS}?subject=Portfolio%20Inquiry`;
 
+const services = [
+  {
+    title: 'AI Web Applications',
+    description:
+      'Build intelligent frontends with React, TypeScript, and rich conversational interfaces that delight users.',
+  },
+  {
+    title: 'Backend Systems',
+    description:
+      'Develop scalable Python APIs, RAG pipelines, and data-driven services that power secure production products.',
+  },
+  {
+    title: 'Launch & Growth',
+    description:
+      'Deploy reliable apps with modern CI/CD, cloud infrastructure, and performance optimization for rapid client adoption.',
+  },
+];
+
 interface Repo {
   id: number;
   name: string;
@@ -76,13 +94,13 @@ function App() {
           <p className="eyebrow">Generative AI Engineer & Python Full Stack Developer</p>
           <h1>Hi, I&rsquo;m Mohammad Naveed</h1>
           <p className="hero-text">
-            I build AI-powered web applications and scalable backend systems with Python, React, and modern deployment workflows.
-            My focus is on generative AI solutions, retrieval-augmented systems, agent orchestration, and production-grade APIs.
-            I deliver dependable, performance-driven technology that powers real-world business results.
+            I help businesses turn AI ideas into customer-ready products with clean user experience,
+            reliable Python backend systems, and fast deployment workflows. My work focuses on
+            practical generative AI, retrieval-augmented solutions, and strong full-stack engineering.
           </p>
           <div className="hero-actions">
-            <a className="btn btn-primary" href="#projects">
-              View Projects
+            <a className="btn btn-primary" href="#services">
+              View Services
             </a>
             <a className="btn btn-outline" href="#contact">
               Contact Me
@@ -90,14 +108,20 @@ function App() {
           </div>
         </div>
         <div className="hero-panel">
-          <div className="stats-card">
-            <p className="stat-label">GitHub Stars</p>
-            <p className="stat-value">Top Repositories by Impact</p>
+          <div className="stats-grid">
+            <div className="stats-card">
+              <p className="stat-label">Trusted Delivery</p>
+              <p className="stat-value">AI products built for performance and durability</p>
+            </div>
+            <div className="stats-card">
+              <p className="stat-label">Engineering Focus</p>
+              <p className="stat-value">React interfaces, FastAPI backends, and deploy-ready systems</p>
+            </div>
           </div>
           <div className="hero-details">
             <div>
-              <h2>LLM Apps • RAG Pipelines • Production APIs. AI Agent System. AI Chatbot </h2>
-              <p>Building reliable, scalable AI-first applications and full-stack systems for real business impact.</p>
+              <h2>Strong architecture, polished UI, and AI-enabled workflows that support business growth.</h2>
+              <p>Let&rsquo;s design and build a digital product that meets your users’ needs and scales reliably.</p>
             </div>
           </div>
         </div>
@@ -137,10 +161,25 @@ function App() {
           </div>
         </section>
 
+        <section className="section services-section" id="services">
+          <div className="section-header">
+            <span className="section-tag">Services</span>
+            <h2>How I help clients launch better products.</h2>
+          </div>
+          <div className="services-grid">
+            {services.map((service) => (
+              <div key={service.title} className="service-card">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="section skills-section" id="skills">
           <div className="section-header">
-            <span className="section-tag">Skills</span>
-            <h2>Tools and Technologies I use daily.</h2>
+            <span className="section-tag">Expertise</span>
+            <h2>Tools and technologies I use to deliver results.</h2>
           </div>
           <div className="skills-grid">
             {skills.map((skillGroup) => (
@@ -157,9 +196,19 @@ function App() {
         </section>
 
         <section className="section projects-section" id="projects">
-          <div className="section-header">
-            <span className="section-tag">Projects</span>
-            <h2>All GitHub Repositories.</h2>
+          <div className="section-header projects-header">
+            <div>
+              <span className="section-tag">Projects</span>
+              <h2>All GitHub Repositories.</h2>
+            </div>
+            <a
+              className="btn btn-secondary"
+              href={`https://github.com/${GITHUB_USERNAME}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View More Projects
+            </a>
           </div>
           {loading ? (
             <p className="status-message">Loading repositories...</p>
@@ -204,7 +253,8 @@ function App() {
           <div className="contact-panel">
             <div>
               <p>
-                 I am Available for build AI-powered web applications and scalable backend systems with Python, React, and modern deployment workflows. My focus is on generative AI solutions, retrieval-augmented systems, agent orchestration, and production-grade APIs
+                I deliver end-to-end engineering for web applications, AI services, and backend systems. If you need a dependable partner
+                to launch a high-quality product fast, I&rsquo;m ready to help.
               </p>
             </div>
             <div className="contact-links">
